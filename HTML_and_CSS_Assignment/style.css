@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+header {
+  width: 100%;
+}
+
+.bar {
+  display: flex;
+  justify-content: end;
+}
+
+.bar > a {
+  margin-right: 20px;
+}
+
+.brand {
+  margin-left: 10px;
+  padding: 3px;
+}
+
+.navbar {
+  border: 1px solid rgb(239, 254, 235);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 8px;
+}
+.navbar-nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+}
+
+.nav-link {
+  padding: 8px;
+  margin: 4px;
+  font-size: 16px;
+  font-weight: normal;
+  border: 1px solid transparent;
+}
+.nav-link:hover,
+.sidebar-nav-item:hover {
+  background-color: #1b903d5c;
+  border-radius: 5px;
+  color: white;
+}
+.active {
+  background-color: #1b903d;
+  border-radius: 5px;
+  color: white;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 14%;
+  height: 100vh;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  margin: 8px;
+}
+
+.sidebar-nav {
+  list-style: none;
+}
+
+.sidebar-nav > li {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 2px;
+  overflow: hidden;
+  color: white;
+}
+
+.main {
+  width: 84%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8px;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  margin: 8px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.price {
+  color: black;
+  font-size: 20px;
+  line-height: 10px;
+  margin: 10px;
+}
+
+.style {
+  color: black;
+  font-size: 15px;
+  font-weight: lighter;
+  line-height: 10px;
+  margin: 10px;
+}
+.card:hover {
+  transform: translate(-.5%, -.5%);
+}
+
+footer {
+  text-align: center;
+  height: 40px;
+  border: 1px solid rgb(239, 254, 235);
+  background-color: rgb(239, 254, 235) !important;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 8px;
+}
+
+/* Globle CSS */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.bg-green {
+  background-color: rgb(239, 254, 235) !important;
+}
+
+.bg-other-green {
+  background-color: rgb(196, 243, 183) !important;
+}
+
+.bg-light {
+  background-color: #f1f1f2;
+}
+.p-2 {
+  padding: 5px;
+}
+.fs-7 {
+  font-size: 16px;
+}
+.fs-6 {
+  font-size: 18px;
+}
+.border {
+  border: 1px solid black;
+}
+.d-flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+
+.shadow {
+  box-sizing: border-box;
+  box-shadow: 0px 3px 10px rgb(100, 100, 111, 0.2);
+}
