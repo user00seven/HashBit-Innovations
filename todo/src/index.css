@@ -42,6 +42,9 @@ li {
   padding: 5px 10px;
   border-bottom: 1px solid #dddddd;
   color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .container,
@@ -62,3 +65,14 @@ li {
   background-color: #007bff;
   border-color: #007bff;
 }
+
+.gray{
+  color:gray;
+  font-size: 12px;
+}
+
+.btn-disable{
+  background-color:#eeeeee;
+  cursor: pointer;
+}
+

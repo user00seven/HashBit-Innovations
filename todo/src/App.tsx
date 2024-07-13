@@ -12,11 +12,18 @@ function Todo() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [input, setInput] = useState("");
   const [array, setArray] = useState<string[]>([]);
+  const [time, setTime] = useState<string | null>(null);
 
   const handleClick = () => {
+    const time = getCurrentTime().toString();
     console.log("you clicked me");
+    setTime(time);
     setArray((prev) => [...prev, input]);
     setInput("");
+    setArray((prevItems) => {
+      const newItems = [...prevItems].sort();
+      return newItems;
+    });
   };
 
   const handleKeyDown = (e: any) => {
@@ -27,6 +34,25 @@ function Todo() {
       }
     }
   };
+
+  const handleDelete = (element: string) => {
+    setArray((prevItems) => prevItems.filter((item) => item !== element));
+  };
+
+  const getCurrentTime = (): string => {
+    const now = new Date();
+    // Get hours, minutes, and seconds
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    // Format time as HH:MM:SS
+    const formattedTime = `${String(hours).padStart(2, "0")}:${String(
+      minutes
+    ).padStart(2, "0")}`;
+
+    return formattedTime;
+  };
+
   return (
     <div>
       <div className="head">
@@ -47,8 +73,23 @@ function Todo() {
       </div>
       <div className="tail">
         <ul>
-          {array.map((element) => {
-            return <li>{element}</li>;
+          {array.map((element, index) => {
+            return (
+              <li className="d-flex" key={index}>
+                <div>
+                  <p>{element}</p>
+                  <p className="gray">@{time}</p>
+                </div>
+                <button
+                  className="btn-disable"
+                  onClick={() => {
+                    handleDelete(element);
+                  }}
+                >
+                  x
+                </button>
+              </li>
+            );
           })}
         </ul>
       </div>
