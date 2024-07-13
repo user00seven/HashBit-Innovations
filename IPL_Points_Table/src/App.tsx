@@ -51,9 +51,9 @@ function Table() {
             <th>NRP</th>
             <th>Points</th>
           </tr>
-          {score.map((element) => {
+          {score.map((element,index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td>{element.No.toString()}</td>
                 <td>{element.Team}</td>
                 <td>{element.Matches.toString()}</td>
