@@ -33,7 +33,7 @@ function Table() {
   }, []);
 
   if (score === undefined) {
-    return <p>Loading...</p>;
+    return <p>Data is Loading...</p>;
   }
 
   return (
