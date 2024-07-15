@@ -15,20 +15,21 @@ function Todo() {
   const [time, setTime] = useState<string | null>(null);
 
   const handleClick = () => {
-    const time = getCurrentTime().toString();
-    console.log("you clicked me");
-    setTime(time);
-    setArray((prev) => [...prev, input]);
-    setInput("");
-    setArray((prevItems) => {
-      const newItems = [...prevItems].sort();
-      return newItems;
-    });
+    if (input !== "") {
+      const time = getCurrentTime().toString();
+      setTime(time);
+      setArray((prev) => [...prev, input]);
+      setInput("");
+      setArray((prevItems) => {
+        const newItems = [...prevItems].sort();
+        return newItems;
+      });
+    }
   };
 
   const handleKeyDown = (e: any) => {
     if (inputRef.current) {
-      if (e.keyCode === 13) {
+      if (e.keyCode === 13 && input != "") {
         handleClick();
         setInput("");
       }
