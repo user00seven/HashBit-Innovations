@@ -46,6 +46,8 @@ function Movies() {
 
   const handleClick = (id: string) => {
     setId(id);
+    setRender(false);
+    setForm({ name: "", email: "", mobile: "" });
   };
   if (list === undefined) return <p>Loading...</p>;
 
@@ -104,7 +106,7 @@ function Movies() {
                             <br />
                             <label>Mobile:</label>
                             <input
-                              type="text"
+                              type="number"
                               name="mobile"
                               placeholder="enter your moblie"
                               value={form.mobile}
