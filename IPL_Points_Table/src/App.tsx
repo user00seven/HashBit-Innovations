@@ -27,8 +27,9 @@ function Table() {
   useEffect(() => {
     fetch("https://my-json-server.typicode.com/FreSauce/json-ipl/data")
       .then((res) => res.json())
-      .then((data) => {
-        setScore(data);
+      .then((data:Data) => {
+        const sortedData = data.sort((a ,b) => a.NRR - b.NRR );
+        setScore(sortedData);
       });
   }, []);
 
